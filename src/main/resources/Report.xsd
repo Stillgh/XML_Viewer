@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--  Элементы-->
+
+  <xsd:element name="root">
+    <xsd:complexType>
+      <xsd:sequence>
+
+        <xsd:element name="studentList" type="studentList">
+          <xsd:unique name="UniqueIdOfStudent">
+            <xsd:selector xpath="student"/>
+            <xsd:field xpath="@id"/>
+          </xsd:unique>
+        </xsd:element>
+
+        <xsd:element name="generalInfo" type="generalInfo">
+          <xsd:unique name="uniqueCourseID">
+            <xsd:selector xpath="courseList/course"/>
+            <xsd:field xpath="@id"/>
+          </xsd:unique>
+          <xsd:unique name="taskIDunique">
+            <xsd:selector xpath="taskList/task"/>
+            <xsd:field xpath="@taskID"/>
+          </xsd:unique>
+        </xsd:element>
+
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- KEY AND KEYREF -->
+    <xsd:key name="StudentCurriculumKey">
+      <xsd:selector xpath=".//curriculumList/curriculum"/>
+      <xsd:field xpath="@curriculumID"/>
+    </xsd:key>
+
+    <xsd:keyref name="StudentCurriculumKeyRef" refer="StudentCurriculumKey">
+      <xsd:selector xpath=".//student"/>
+      <xsd:field xpath="curriculumID"/>
+    </xsd:keyref>
+
+    <xsd:keyref name="StudentTaskKeyRef" refer="StudentTaskKey">
+      <xsd:selector xpath=".//student/results/task_result"/>
+      <xsd:field xpath="@taskID"/>
+    </xsd:keyref>
+
+    <xsd:key name="StudentTaskKey">
+      <xsd:selector xpath=".//generalInfo/taskList/task"/>
+      <xsd:field xpath="@taskID"/>
+    </xsd:key>
+
+    <xsd:key name="CourseKey">
+      <xsd:selector xpath=".//courseList/course"/>
+      <xsd:field xpath="@id"/>
+    </xsd:key>
+
+    <xsd:keyref name="CourseRef" refer="CourseKey">
+      <xsd:selector xpath=".//curriculumCourses/course"/>
+      <xsd:field xpath="id"/>
+    </xsd:keyref>
+
+  </xsd:element>
+
+  <!--  Описание элементов-->
+
+  <xsd:complexType name="studentList">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="student" type="student"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="student">
+    <xsd:sequence>
+      <xsd:element name="fullName" type="xsd:string"/>
+      <xsd:element name="city" type="xsd:string"/>
+      <xsd:element name="email" type="emailRegex"/>
+      <xsd:element name="startOfStudying" type="xsd:date"/>
+      <xsd:element name="signingOfContract" type="xsd:boolean"/>
+      <xsd:element name="curriculumID" type="xsd:positiveInteger"/>
+      <xsd:element name="results" type="results">
+        <xsd:unique name="UniqueTaskID">
+          <xsd:selector xpath="task_result"/>
+          <xsd:field xpath="@taskID"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="results">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="task_result" type="task_result"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="task_result">
+    <xsd:sequence>
+      <xsd:element name="task_status" type="taskResultStatus"/>
+      <xsd:element name="mark" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="taskID" type="xsd:positiveInteger" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="emailRegex">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-z0-9_.\-]+@[a-z0-9_.\-]+\.[a-z]{3,5}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!--  Общая инфа-->
+
+  <xsd:complexType name="generalInfo">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="curriculumList" type="curriculumList">
+        <xsd:unique name="UniqueCurriculumID">
+          <xsd:selector xpath="curriculum"/>
+          <xsd:field xpath="@curriculumID"/>
+        </xsd:unique>
+      </xsd:element>
+      <xsd:element name="courseList" type="courseList"/>
+      <xsd:element name="taskList" type="taskList"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="curriculumList">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="curriculum" type="curriculum"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="courseList">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="course" type="course"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="taskList">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="task" type="task"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="curriculum">
+    <xsd:sequence>
+      <xsd:element name="title" type="xsd:string"/>
+      <xsd:element name="author" type="xsd:string"/>
+      <xsd:element name="creationDate" type="xsd:date"/>
+      <xsd:element name="curriculumCourses" type="curriculumCoursesList">
+        <xsd:unique name="uniqueCourseInCurr">
+          <xsd:selector xpath=".//course"/>
+          <xsd:field xpath="id"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="curriculumID" type="xsd:positiveInteger" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="curriculumCoursesList">
+    <xsd:sequence>
+      <xsd:element name="course" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:positiveInteger"/>
+              </xsd:simpleType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="course">
+    <xsd:sequence>
+      <xsd:element name="title" type="xsd:string"/>
+      <xsd:element name="author" type="xsd:string"/>
+      <xsd:element name="creationDate" type="xsd:date"/>
+      <xsd:element name="courseTasks" type="courseTasksList">
+        <xsd:unique name="uniqueCourseTask">
+          <xsd:selector xpath="taskID"/>
+          <xsd:field xpath="@id"/>
+        </xsd:unique>
+        <xsd:unique name="uniqueIDinTaskID">
+          <xsd:selector xpath="taskID"/>
+          <xsd:field xpath="id"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:positiveInteger" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="courseTasksList">
+    <xsd:sequence>
+      <xsd:element name="taskID" maxOccurs="unbounded" type="taskID"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="taskID">
+    <xsd:sequence>
+      <xsd:element name="id">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:positiveInteger"/>
+        </xsd:simpleType>
+        <xsd:unique name="uniqueIdOfTask">
+          <xsd:selector xpath="taskID"/>
+          <xsd:field xpath="@id"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:positiveInteger"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="task">
+    <xsd:sequence>
+      <xsd:element name="task_title" type="xsd:string"/>
+      <xsd:element name="duration" type="xsd:positiveInteger"/>
+    </xsd:sequence>
+    <xsd:attribute name="taskID" type="xsd:positiveInteger" use="required"/>
+    <xsd:attribute name="type" type="taskType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="taskType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="Theory|Practice"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="taskResultStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Изучение не началось"/>
+      <xsd:enumeration value="В процессе изучения"/>
+      <xsd:enumeration value="Изучение завершено"/>
+      <xsd:enumeration value="Выполнение не началось"/>
+      <xsd:enumeration value="В процессе выполнения"/>
+      <xsd:enumeration value="Находится на проверке"/>
+      <xsd:enumeration value="Задание принято"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>

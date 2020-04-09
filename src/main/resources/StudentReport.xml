@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="Report.xsd">
+
+  <studentList>
+
+    <student id="1">
+      <fullName>Alexander Sergeev</fullName>
+      <city>Saratov</city>
+      <email>asergeev@epam.com</email>
+      <startOfStudying>2018-03-04</startOfStudying>
+      <signingOfContract>true</signingOfContract>
+      <curriculumID>1</curriculumID>
+      <results>
+        <task_result taskID="1">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="2">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="3">
+          <task_status>Задание принято</task_status>
+          <mark>5</mark>
+        </task_result>
+        <task_result taskID="4">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="5">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="6">
+          <task_status>Изучение не началось</task_status>
+        </task_result>
+        <task_result taskID="7">
+          <task_status>Выполнение не началось</task_status>
+        </task_result>
+        <task_result taskID="8">
+          <task_status>Изучение не началось</task_status>
+        </task_result>
+        <task_result taskID="9">
+          <task_status>Выполнение не началось</task_status>
+        </task_result>
+        <task_result taskID="10">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="11">
+          <task_status>Находится на проверке</task_status>
+        </task_result>
+        <task_result taskID="12">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="13">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="14">
+          <task_status>Задание принято</task_status>
+          <mark>4</mark>
+        </task_result>
+        <task_result taskID="15">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="16">
+          <task_status>Выполнение не началось</task_status>
+        </task_result>
+      </results>
+    </student>
+
+    <student id="2">
+      <fullName>Boris Romanov</fullName>
+      <city>Vorkuta</city>
+      <email>bromanov@epam.com</email>
+      <startOfStudying>2019-03-04</startOfStudying>
+      <signingOfContract>true</signingOfContract>
+      <curriculumID>1</curriculumID>
+      <results>
+        <task_result taskID="1">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="2">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="3">
+          <task_status>Задание принято</task_status>
+          <mark>4</mark>
+        </task_result>
+        <task_result taskID="4">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="5">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="6">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="7">
+          <task_status>Задание принято</task_status>
+          <mark>5</mark>
+        </task_result>
+        <task_result taskID="8">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="9">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="10">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="11">
+          <task_status>Находится на проверке</task_status>
+        </task_result>
+        <task_result taskID="12">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="13">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="14">
+          <task_status>Задание принято</task_status>
+          <mark>4</mark>
+        </task_result>
+        <task_result taskID="15">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="16">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+      </results>
+    </student>
+
+    <student id="3">
+      <fullName>Vadim Petrov</fullName>
+      <city>Vladivostok</city>
+      <email>vpetrov@epam.com</email>
+      <startOfStudying>2019-04-14</startOfStudying>
+      <signingOfContract>false</signingOfContract>
+      <curriculumID>3</curriculumID>
+      <results>
+        <task_result taskID="6">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="7">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="8">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="9">
+          <task_status>Задание принято</task_status>
+          <mark>5</mark>
+        </task_result>
+      </results>
+    </student>
+
+    <student id="4">
+      <fullName>Ivan Fedorov</fullName>
+      <city>Samara</city>
+      <email>ifedorov@epam.com</email>
+      <startOfStudying>2019-04-01</startOfStudying>
+      <signingOfContract>true</signingOfContract>
+      <curriculumID>2</curriculumID>
+      <results>
+        <task_result taskID="1">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="2">
+          <task_status>Изучение завершено</task_status>
+        </task_result>
+        <task_result taskID="3">
+          <task_status>Находится на проверке</task_status>
+        </task_result>
+        <task_result taskID="4">
+          <task_status>В процессе изучения</task_status>
+        </task_result>
+        <task_result taskID="5">
+          <task_status>В процессе выполнения</task_status>
+        </task_result>
+        <task_result taskID="13">
+          <task_status>Изучение не началось</task_status>
+        </task_result>
+        <task_result taskID="14">
+          <task_status>Выполнение не началось</task_status>
+        </task_result>
+        <task_result taskID="15">
+          <task_status>Изучение не началось</task_status>
+        </task_result>
+        <task_result taskID="16">
+          <task_status>Выполнение не началось</task_status>
+        </task_result>
+      </results>
+    </student>
+
+  </studentList>
+
+  <generalInfo>
+    <curriculumList>
+
+      <curriculum curriculumID="1">
+        <title>Полная программа</title>
+        <author>George St Pierre</author>
+        <creationDate>2018-10-30</creationDate>
+        <curriculumCourses>
+          <course>
+            <id>1</id>
+          </course>
+          <course>
+            <id>2</id>
+          </course>
+          <course>
+            <id>3</id>
+          </course>
+          <course>
+            <id>4</id>
+          </course>
+          <course>
+            <id>5</id>
+          </course>
+          <course>
+            <id>6</id>
+          </course>
+          <course>
+            <id>7</id>
+          </course>
+          <course>
+            <id>8</id>
+          </course>
+        </curriculumCourses>
+      </curriculum>
+
+      <curriculum curriculumID="2">
+        <title>Укороченная программа</title>
+        <author>Mark Hunt</author>
+        <creationDate>2018-11-30</creationDate>
+        <curriculumCourses>
+          <course>
+            <id>1</id>
+          </course>
+          <course>
+            <id>2</id>
+          </course>
+          <course>
+            <id>3</id>
+          </course>
+          <course>
+            <id>7</id>
+          </course>
+          <course>
+            <id>8</id>
+          </course>
+        </curriculumCourses>
+      </curriculum>
+
+      <curriculum curriculumID="3">
+        <title>Специальная программа 1</title>
+        <author>Mark Coleman</author>
+        <creationDate>2019-01-17</creationDate>
+        <curriculumCourses>
+          <course>
+            <id>4</id>
+          </course>
+          <course>
+            <id>5</id>
+          </course>
+        </curriculumCourses>
+      </curriculum>
+
+    </curriculumList>
+
+    <courseList>
+      <course id="1">
+        <title>Курс "Overview of Eclipse IDE"</title>
+        <author>Jon Jones</author>
+        <creationDate>2010-03-03</creationDate>
+        <courseTasks>
+          <taskID>
+            <id>1</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="2">
+        <title>Курс "Основы языка Java"</title>
+        <author>Rampage Jackson</author>
+        <creationDate>2005-04-03</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>2</id>
+          </taskID>
+          <taskID id="2">
+            <id>3</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="3">
+        <title>Курс "Язык Java - расширенные возможности"</title>
+        <author>Tom Hardy</author>
+        <creationDate>2007-10-11</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>4</id>
+          </taskID>
+          <taskID id="2">
+            <id>5</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="4">
+        <title>Курс "Язык XML"</title>
+        <author>Edward Norton</author>
+        <creationDate>2015-02-10</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>6</id>
+          </taskID>
+          <taskID id="2">
+            <id>7</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="5">
+        <title>Курс "Язык XSLT и XPath"</title>
+        <author>Don Frye</author>
+        <creationDate>2016-01-01</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>8</id>
+          </taskID>
+          <taskID id="2">
+            <id>9</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="6">
+        <title>Курс "Технология Struts Framework"</title>
+        <author>Demian Maia</author>
+        <creationDate>2014-07-09</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>10</id>
+          </taskID>
+          <taskID id="2">
+            <id>11</id>
+          </taskID>
+          <taskID id="3">
+            <id>12</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="7">
+        <title>Курс "Процесс производства программного обеспечения"</title>
+        <author>Heath Herring</author>
+        <creationDate>2017-06-04</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>13</id>
+          </taskID>
+          <taskID id="2">
+            <id>14</id>
+          </taskID>
+          <taskID id="3">
+            <id>15</id>
+          </taskID>
+        </courseTasks>
+      </course>
+      <course id="8">
+        <title>Курс "Процесс разработки программного обеспечения"</title>
+        <author>Rodrigo Nogueira</author>
+        <creationDate>2011-10-10</creationDate>
+        <courseTasks>
+          <taskID id="1">
+            <id>16</id>
+          </taskID>
+        </courseTasks>
+      </course>
+
+    </courseList>
+
+    <taskList>
+
+      <task taskID="1" type="Theory">
+        <task_title>Overview of Eclipse IDE</task_title>
+        <duration>4</duration>
+      </task>
+
+      <task taskID="2" type="Theory">
+        <task_title>Learning the Java Language Basics</task_title>
+        <duration>12</duration>
+      </task>
+
+      <task taskID="3" type="Practice">
+        <task_title>Practical Task</task_title>
+        <duration>4</duration>
+      </task>
+
+      <task taskID="4" type="Theory">
+        <task_title>Learning the Java Language advanced features</task_title>
+        <duration>17</duration>
+      </task>
+
+      <task taskID="5" type="Practice">
+        <task_title>Practical Task</task_title>
+        <duration>16</duration>
+      </task>
+
+      <task taskID="6" type="Theory">
+        <task_title>Learning XML Language</task_title>
+        <duration>6</duration>
+      </task>
+
+      <task taskID="7" type="Practice">
+        <task_title>Practical Task</task_title>
+        <duration>8</duration>
+      </task>
+
+      <task taskID="8" type="Theory">
+        <task_title>Learning XSL and XPath Basics</task_title>
+        <duration>14</duration>
+      </task>
+
+      <task taskID="9" type="Practice">
+        <task_title>Equipment Stylesheets</task_title>
+        <duration>8</duration>
+      </task>
+
+      <task taskID="10" type="Theory">
+        <task_title>Struts Framework Fundamentals</task_title>
+        <duration>8</duration>
+      </task>
+
+      <task taskID="11" type="Practice">
+        <task_title>Struts Framework Task</task_title>
+        <duration>40</duration>
+      </task>
+
+      <task taskID="12" type="Practice">
+        <task_title>Java Message Service Task</task_title>
+        <duration>20</duration>
+      </task>
+
+      <task taskID="13" type="Theory">
+        <task_title>Mastering Microsoft Project</task_title>
+        <duration>3</duration>
+      </task>
+
+      <task taskID="14" type="Practice">
+        <task_title>MS Project Practical Task</task_title>
+        <duration>8</duration>
+      </task>
+
+      <task taskID="15" type="Theory">
+        <task_title>Software development process. Development team and its structure</task_title>
+        <duration>12</duration>
+      </task>
+
+      <task taskID="16" type="Practice">
+        <task_title>Team Project</task_title>
+        <duration>80</duration>
+      </task>
+
+    </taskList>
+  </generalInfo>
+
+</root>
+
